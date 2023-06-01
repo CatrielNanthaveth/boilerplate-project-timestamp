@@ -39,13 +39,21 @@ app.get('/api/:date?', (req, res) => {
       unix: date.getTime(),
       utc: date.toUTCString()
     }
-  } else if(paramsDate.match(intRegex)) {
+  } else if(intRegex.test(paramsDate)) {
     date = new Date(parseInt(paramsDate));
     resDate = {
       unix: date.getTime(),
       utc: date.toUTCString()
     }
   } else {
+    date = new Date(paramsDate);
+    resDate = {
+      unix: date.getTime(),
+      utc: date.toUTCString()
+    }
+  }
+
+  if(!resDate['unix'] || !resDate['utc']) {
     resDate = {
       error: 'Invalid Date'
     };
