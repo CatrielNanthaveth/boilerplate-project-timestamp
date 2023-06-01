@@ -1,14 +1,17 @@
 {
   "name": "fcc-api-projects-boilerplate",
   "version": "0.0.1",
+  "homepage": "https://catrielnanthaveth.github.io/boilerplate-project-timestamp",
   "description": "An FCC Backend Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "express": "^4.12.4",
-    "cors": "^2.8.0"
+    "cors": "^2.8.0",
+    "express": "^4.12.4"
   },
   "repository": {
     "type": "git",
@@ -17,12 +20,14 @@
   "bugs": {
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
-  "homepage": "https://github.com/freeCodeCamp/boilerplate-project-timestamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "keywords": [
     "node",
     "express",
     "freeCodeCamp"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
